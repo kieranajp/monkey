@@ -1,5 +1,7 @@
 package ast
 
+import "bytes"
+
 // Program is the root node of the AST
 type Program struct {
 	Statements []Statement
@@ -12,4 +14,14 @@ func (p *Program) TokenLiteral() string {
 	}
 
 	return ""
+}
+
+// String prints out the entire Program as a string
+func (p *Program) String() string {
+	var out bytes.Buffer
+	for _, s := range p.Statements {
+		out.WriteString(s.String())
+	}
+
+	return out.String()
 }

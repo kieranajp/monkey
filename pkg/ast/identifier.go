@@ -13,3 +13,6 @@ func (i *Identifier) expressionNode() {}
 
 // TokenLiteral returns the literal field of the IDENT token.
 func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
+
+// String up the token value
+func (i *Identifier) String() string { return i.Value }
